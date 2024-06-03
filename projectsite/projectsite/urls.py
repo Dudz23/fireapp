@@ -22,6 +22,23 @@ urlpatterns = [
     
     path('incident_list/', views.IncidentList.as_view(), name='incident-list'),
     path('incident_list/add', views.IncidentCreateView.as_view(), name='incident-add'),
+    path('incident_list/<pk>', views.IncidentUpdateView.as_view(), name='incident-update'),
+    path('incident_list/<pk>/delete', views.IncidentDeleteView.as_view(), name='incident-delete'),
+    
+    path('firestation_list/', views.FireStationList.as_view(), name='firestation-list'),
+    path('firestation_list/add', views.FireStationCreateView.as_view(), name='firestation-add'),
+    path('firestation_list/<pk>', views.FireStationUpdateView.as_view(), name='firestation-update'),
+    path('firestation_list/<pk>/delete', views.FireStationDeleteView.as_view(), name='firestation-delete'),
+    
+    path('fire_fighter_list/', views.FirefighterList.as_view(), name='firefighter-list'),
+    path('fire_fighter_list/add', views.FirefighterCreateView.as_view(), name='firefighter-add'),
+    path('fire_fighter_list/<pk>', views.FirefighterUpdateView.as_view(), name='firefighter-update'),
+    path('fire_fighter_list/<pk>/delete', views.FirefighterDeleteView.as_view(), name='firefighter-delete'),
+    
+     path('firetruck_list/', views.FiretruckList.as_view(), name='firetruck-list'),
+    path('firetruck_list/add', views.FiretruckCreateView.as_view(), name='firetruck-add'),
+    path('firetruck_list/<pk>', views.FiretruckUpdateView.as_view(), name='firetruck-update'),
+    path('firetruck_list/<pk>/delete', views.FiretruckDeleteView.as_view(), name='firetruck-delete'),
     
     
     
