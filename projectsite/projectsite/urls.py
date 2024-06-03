@@ -15,6 +15,7 @@ urlpatterns = [
     path('multilineChart/', MultilineIncidentTop3Country, name='chart'),
     path('multiBarChart/', multipleBarbySeverity, name='chart'),
     path('stations', views.map_station, name='map-station'),
+    path('incidents', views.map_incident, name='map-incidents'),
     path('locations_list/', views.LocationList.as_view(), name='location-list'),
     path('locations_list/add', views.LocationCreateView.as_view(), name='location-add'),
     path('locations_list/<pk>', views.LocationUpdateView.as_view(), name='location-update'),

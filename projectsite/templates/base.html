@@ -76,7 +76,7 @@
               <div class="info">
                 <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                   <span>
-                    Hizrian
+                   Cloyd Talirongan
                     <span class="user-level">Administrator</span>
                     <span class="caret"></span>
                   </span>
@@ -114,13 +114,8 @@
                 <div class="collapse" id="dashboard">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="#">
-                        <span class="sub-item">Dashboard 1</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <span class="sub-item">Dashboard 2</span>
+                      <a href=" {% url 'dashboard-chart' %} ">
+                        <span class="sub-item">Charts</span>
                       </a>
                     </li>
                   </ul>
@@ -131,28 +126,6 @@
                   <i class="fa fa-ellipsis-h"></i>
                 </span>
                 <h4 class="text-section">Components</h4>
-              </li>
-              <li class="nav-item">
-                <a data-toggle="collapse" href="#base">
-                  <i class="fas fa-layer-group"></i>
-                  <p>Base</p>
-                  <span class="caret"></span>
-                </a>
-                <div class="collapse" id="base">
-                  <ul class="nav nav-collapse">
-                    <li>
-                      <a href="components/avatars.html">
-                        <span class="sub-item">Avatars</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="components/buttons.html">
-                        <span class="sub-item">Buttons</span>
-                      </a>
-                    </li>
-                    
-                  </ul>
-                </div>
               </li>
               
               
@@ -171,7 +144,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="maps/jqvmap.html">
+                      <a href="{% url 'map-incidents' %}">
                         <span class="sub-item">Fire Incidents</span>
                       </a>
                     </li>
