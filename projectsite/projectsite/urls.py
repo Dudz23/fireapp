@@ -20,6 +20,11 @@ urlpatterns = [
     path('locations_list/<pk>', views.LocationUpdateView.as_view(), name='location-update'),
     path('locations_list/<pk>/delete', views.LocationDeleteView.as_view(), name='location-delete'),
     
+    path('incident_list/', views.IncidentList.as_view(), name='incident-list'),
+    path('incident_list/add', views.IncidentCreateView.as_view(), name='incident-add'),
+    
+    
+    
     
     
 ]
