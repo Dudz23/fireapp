@@ -35,10 +35,15 @@ urlpatterns = [
     path('fire_fighter_list/<pk>', views.FirefighterUpdateView.as_view(), name='firefighter-update'),
     path('fire_fighter_list/<pk>/delete', views.FirefighterDeleteView.as_view(), name='firefighter-delete'),
     
-     path('firetruck_list/', views.FiretruckList.as_view(), name='firetruck-list'),
+    path('firetruck_list/', views.FiretruckList.as_view(), name='firetruck-list'),
     path('firetruck_list/add', views.FiretruckCreateView.as_view(), name='firetruck-add'),
     path('firetruck_list/<pk>', views.FiretruckUpdateView.as_view(), name='firetruck-update'),
     path('firetruck_list/<pk>/delete', views.FiretruckDeleteView.as_view(), name='firetruck-delete'),
+    
+    path('weathercondition_list/', views.WeatherCondition.as_view(), name='weathercondition-list'),
+    path('weathercondition_list/add', views.WeatherConditionCreateView.as_view(), name='weathercondition-add'),
+    path('weathercondition_list/<pk>', views.WeatherConditionUpdateView.as_view(), name='weathercondition-update'),
+    path('weathercondition_list/<pk>/delete', views.WeatherConditionDeleteView.as_view(), name='weathercondition-delete'),
     
     
     
