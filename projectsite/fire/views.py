@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from fire.models import Locations, Incident, FireStation
+from django.urls import reverse_lazy
+from fire.forms import FireStationForm, IncidentForm, LocationForm, FireTruckForm, FirefightersForm, WeatherConditionForm
+from django.db.models import Q
 from django.db import connection
 from django.http import JsonResponse
 from datetime import datetime
@@ -184,3 +188,36 @@ def map_station(request):
      }
 
      return render(request, 'map_station.html', context)
+ 
+ 
+class LocationList(ListView):
+    model = Locations
+    context_object_name = 'locations'
+    template_name = "locations_list.html"
+    paginate_by = 5
+
+    def get_queryset(self, *args, **kwargs):
+        qs = super(LocationList, self).get_queryset(*args, **kwargs)
+        if self.request.GET.get("q") != None:
+            query = self.request.GET.get('q')
+            qs = qs.filter(Q(name__icontains=query) |
+            Q(city__icontains=query) | Q(country__icontains=query))
+        return qs
+    
+    
+class LocationCreateView(CreateView):
+    model = Locations
+    form_class = LocationForm
+    template_name = "locations_add.html"
+    success_url = reverse_lazy('location-list')
+    
+class LocationUpdateView(UpdateView):
+    model = Locations
+    form_class = LocationForm
+    template_name = "locations_edit.html"
+    success_url = reverse_lazy('location-list')
+    
+class LocationDeleteView(DeleteView):
+    model = Locations
+    template_name = 'locations_del.html'
+    success_url = reverse_lazy('location-list')
